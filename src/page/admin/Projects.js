@@ -1,8 +1,22 @@
 import { projects } from "../../data";
-import { useEffect } from "../../utilities";
+import { useEffect, useState } from "../../utilities";
 const AdminProjectsPage = () => {
+
+    const [data, setData] = useState([]);
+useEffect(() =>{
+    const projects = JSON.parse(localStorage.getItem('projects'))||[];
+    setData(projects);
+}, []);
+
     useEffect(()=>{
         const btns = document.querySelectorAll('.btn-remove');
+        for(let btn of btns){
+            btn.addEventListener('click',function(){
+                const id = this.dataset.id;
+                const newProject = data.filter(project => project.id !== +id);
+                setData(newProject);
+            })
+        }
     });
   return /*html*/`
     <div class="container  mt-3">
@@ -16,11 +30,14 @@ const AdminProjectsPage = () => {
                     </tr>
                 </thead>
                 <tbody>
-                ${projects.map((project, index) =>`
+                ${data.map((project, index) =>`
                     <tr>
                         <td>${index +1}</td>
                         <td>${project.name}</td>
-                        <td><button data-id="${project.id}" class="btn btn-danger btn-remove">Xóa</button></td>
+                        <td>
+                        <button data-id="${project.id}" class="btn btn-danger btn-remove">Xóa</button>
+                        <a class="btn btn-danger " href="/admin/Projects/${project.id}/edit">Sửa</a>
+                        </td>
                     </tr>
                     `).join("")}
                 </tbody>
