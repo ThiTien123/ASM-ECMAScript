@@ -19,8 +19,9 @@ router.on('/Contact',() => render(ContactPage, app));
 router.on('/Post',() => render(PostPage, app));
 router.on('/Post-detail/:id',() => render(PostDetailPage, app));
 router.on('/Projects',() => render(ProjectPage, app));
-router.on('/Projects-detail/:id',() => render(ProjectDetailPage, app));
+router.on('/Projects/:id',(data) => render(()=>ProjectDetailPage(data), app));
+
 
 router.notFound(() => render(NotFoundPage, app));
-// console.log(NotFoundPage())
+
 router.resolve();
