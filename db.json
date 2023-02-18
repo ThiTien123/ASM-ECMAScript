@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "name": "Dự án",
+      "image": "C:\\fakepath\\Creative-coffee-house-design-vector.jpg",
+      "id": 1
+    },
+    {
+      "name": "dự án 3",
+      "image": "C:\\fakepath\\img.png",
+      "id": 2
+    }
+  ]
+}

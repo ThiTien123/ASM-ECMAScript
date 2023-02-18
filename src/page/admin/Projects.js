@@ -2,10 +2,11 @@ import { projects } from "../../data";
 import { useEffect, useState } from "../../utilities";
 const AdminProjectsPage = () => {
 
-    const [data, setData] = useState([]);
+    const [projects, setProjects] = useState([]);
 useEffect(() =>{
-    const projects = JSON.parse(localStorage.getItem('projects'))||[];
-    setData(projects);
+    // const projects = JSON.parse(localStorage.getItem('projects'))||[];
+    // setData(projects);
+    fetch("http://localhost:3000/projects").then((response) => response.json()).then((data) =>setProjects(data));
 }, []);
 
     useEffect(()=>{
@@ -30,7 +31,7 @@ useEffect(() =>{
                     </tr>
                 </thead>
                 <tbody>
-                ${data.map((project, index) =>`
+                ${projects.map((project, index) =>`
                     <tr>
                         <td>${index +1}</td>
                         <td>${project.name}</td>

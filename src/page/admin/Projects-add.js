@@ -1,6 +1,6 @@
 import { useEffect ,router} from "../../utilities"
-// import { projects } from "../../data";
-import { v4 as uuidv4 } from 'uuid';
+import { projects } from "../../data";
+// import { v4 as uuidv4 } from 'uuid';
 const AdminProjectAddPage = () => {
     const projects = JSON.parse(localStorage.getItem('projects')) || [];
     useEffect(() => {
@@ -10,15 +10,24 @@ const AdminProjectAddPage = () => {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             const newProject = {
-                id: uuidv4(),
+                // id: uuidv4(),
+                // id: projects.length +1,
                 name: projectName.value,
                 image: projectImage.value
             };
+
+            fetch("http://localhost:3000/projects",{
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newProject) //Chuỗi json 
+            });
             // Thêm vào mảng projects
-            projects.push(newProject);
+            // projects.push(newProject);
             
             // lưu lại storage
-            localStorage.setItem('projects', JSON.stringify(projects));
+            // localStorage.setItem('projects', JSON.stringify(projects));
 
             // sang trang 
             router.navigate('/admin/Projects')
