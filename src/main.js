@@ -12,6 +12,8 @@ import PostDetailPage from "./page/Post-detail";
 import ProjectPage from "./page/Projects";
 import ProjectDetailPage from "./page/Projects-detail";
 import NotFoundPage from "./page/NotFound";
+// admin
+import AdminProjectsPage from "./page/admin/Projects";
 
 router.on("/", () => render(HomePage, app));
 router.on('/About',() => render(AboutPage, app));
@@ -21,7 +23,8 @@ router.on('/Post-detail/:id',() => render(PostDetailPage, app));
 router.on('/Projects',() => render(ProjectPage, app));
 router.on('/Projects/:id',(data) => render(()=>ProjectDetailPage(data), app));
 
-
+// admin
+router.on("/admin/Projects", () => render(AdminProjectsPage, app));
 router.notFound(() => render(NotFoundPage, app));
 
 router.resolve();
