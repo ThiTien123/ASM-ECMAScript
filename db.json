@@ -1,14 +1,14 @@
 {
   "projects": [
     {
-      "name": "Dự án",
-      "image": "C:\\fakepath\\Creative-coffee-house-design-vector.jpg",
-      "id": 1
+      "name": "Dự án tốt nghiệp",
+      "image": "svbnm",
+      "id": 2
     },
     {
-      "name": "dự án 3",
-      "image": "C:\\fakepath\\img.png",
-      "id": 2
+      "name": "Dự án 2 update",
+      "image": "sdfgh",
+      "id": 3
     }
   ]
 }

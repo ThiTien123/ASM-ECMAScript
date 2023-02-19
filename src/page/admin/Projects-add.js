@@ -1,12 +1,13 @@
-import { useEffect ,router} from "../../utilities"
+import { useEffect, router } from "../../utilities"
 import { projects } from "../../data";
+import axios from "axios";
 // import { v4 as uuidv4 } from 'uuid';
 const AdminProjectAddPage = () => {
     const projects = JSON.parse(localStorage.getItem('projects')) || [];
     useEffect(() => {
         const form = document.getElementById('form-add');
         const projectName = document.getElementById('project-name');
-        const projectImage = document.getElementById('project-image')
+        const projectImage = document.getElementById('project-description')
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             const newProject = {
@@ -15,22 +16,27 @@ const AdminProjectAddPage = () => {
                 name: projectName.value,
                 image: projectImage.value
             };
+            // api
+            // fetch("http://localhost:3000/projects", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify(newProject) //Chuỗi json 
+            // }).then(() => {
+            //     // sang trang 
+            //     router.navigate('/admin/Projects')
+            // })
 
-            fetch("http://localhost:3000/projects",{
-                method: "POST",
-                headers:{
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(newProject) //Chuỗi json 
-            });
+            axios.post('http://localhost:3000/projects',newProject).
+            then(()=>router.navigate('/admin/Projects'));
             // Thêm vào mảng projects
             // projects.push(newProject);
-            
+
             // lưu lại storage
             // localStorage.setItem('projects', JSON.stringify(projects));
 
-            // sang trang 
-            router.navigate('/admin/Projects')
+
         });
     });
     return /*html*/` 
@@ -42,8 +48,8 @@ const AdminProjectAddPage = () => {
                 <input type="text" name="" id="project-name" class="form-control">
             </div>
             <div class="form-group mb-3">
-                <label for="">image</label>
-                <input type="file" name="img" id="project-image" class="project-image">
+                <label for="">description</label>
+                <input type="text" name="" id="project-description" class="project-description">
             </div>
             <div class="form-group">
                 <button class="btn btn-primary"> Add</button>
