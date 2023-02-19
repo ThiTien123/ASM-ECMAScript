@@ -8,10 +8,12 @@ import HomePage from "./page/Home";
 import AboutPage from "./page/About";
 import ContactPage from "./page/Contact";
 import PostPage from "./page/Post";
-import PostDetailPage from "./page/Post-detail";
 import ProjectPage from "./page/Projects";
 import ProjectDetailPage from "./page/Projects-detail";
 import NotFoundPage from "./page/NotFound";
+import Skill from "./page/Skill";
+import Qualification from "./page/Qualification";
+import Services from "./page/Services";
 // admin
 import AdminProjectsPage from "./page/admin/Projects";
 import AdminProjectAddPage from "./page/admin/Projects-add";
@@ -20,8 +22,10 @@ import AdminProjectEditPage from "./page/admin/Projects-edit";
 router.on("/", () => render(HomePage, app));
 router.on('/About',() => render(AboutPage, app));
 router.on('/Contact',() => render(ContactPage, app));
+router.on('/Skills',() => render(Skill, app));
+router.on('/Qualification',() => render(Qualification, app));
+router.on('/Services',() => render(Services, app));
 router.on('/Post',() => render(PostPage, app));
-router.on('/Post/detail/:id',() => render(PostDetailPage, app));
 router.on('/Projects',() => render(ProjectPage, app));
 router.on('/Projects/:id',(data) => render(()=>ProjectDetailPage(data), app));
 

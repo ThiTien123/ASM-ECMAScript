@@ -1,7 +1,7 @@
 const projects = [
-    {id:1, name: "Social Media App"},
-    {id:2, name: "Music App"},
-    {id:3, name: "Online Shopping App"}
+    {id:1, name: "Dự án mẫu"},
+    {id:2, name: "Dự án 1"},
+    {id:3, name: "Dự án mẫu"}
 ];
 
 // const user = [

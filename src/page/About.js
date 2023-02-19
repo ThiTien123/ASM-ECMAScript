@@ -1,65 +1,98 @@
 import Header from "../components/Header";
-
 const AboutPage = () => {
-  // const tabLink = document.getElementsByClassName("tab-link");
-  // const tabContent = document.getElementsByClassName("tab-content");
+  
   return` 
   ${Header()}
-  <!-- About -->
-  <div id="about">
-      <!-- <div class="container"> -->
-      <div class="row">
-          <div class="about-col-1">
-              <img src="../img/kisspng-portable-network-graphics-vector-graphics-clip-art-do-nootropics-work-best-5-supplements-5c72a50c2701f4.0128278115510172281598.jpg"
-                  alt="">
-          </div>
-          <div class="about-col-2">
-              <h1 class="sub-title">About me</h1>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut placeat rem consequuntur
-                  exercitationem sed, omnis voluptas sunt doloremque facilis culpa similique harum, deserunt nam
-                  dolorum architecto, debitis consequatur impedit accusantium!</p>
-              <div class="tab-title">
-                  <p class="tab-link active-link" onclick="opentab('skills')">Skills</p>
-                  <p class="tab-link" onclick="opentab('experience')">Experience</p>
-                  <p class="tab-link" onclick="opentab('education')">Education</p>
-              </div>
-              <div class="tab-content active-tab" id="skills">
-                  <ul>
-                      <li><span>UI?UX</span> <br> Designing Web/App interfaces</li>
-                      <li><span>Web Development</span> <br> Web app Development </li>
-                      <li><span>App Development</span> <br> Building Android/IOS apps</li>
-                  </ul>
-              </div>
-              <div class="tab-content" id="experience">
-                  <ul>
-                      <li><span>Experience</span> <br> Designing Web/App interfaces</li>
-                      <li><span>Web Development</span> <br> Web app Development </li>
-                      <li><span>App Development</span> <br> Building Android/IOS apps</li>
-                  </ul>
-              </div>
-              <div class="tab-content" id="education">
-                  <ul>
-                      <li><span>Education</span> <br> Designing Web/App interfaces</li>
-                      <li><span>Web Development</span> <br> Web app Development </li>
-                      <li><span>App Development</span> <br> Building Android/IOS apps</li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-      <!-- </div> -->
-  </div>
+  <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="home_contaier container flex grid section_border">
+                <div class="home_data grid">
+                    <h1 class="home_title">
+                        Hi, I'm Tiên <br>
+                        Fontend Developer <br>
+                    </h1>
+                    <div class="home_blob grid">
+                        <div class="home_perfil">
+                            <img src="assets/img/avater-removebg-preview (1).png" alt="home perfil">
+                        </div>
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <ul class="home_social">
+                        <a href="https://www.linkedin.com/" target="_blank" class="home_social-link"><i
+                                class="ri-linkedin-box-line"></i></a>
+                        <a href="https://github.com/" target="_blank" class="home_social-link"><i
+                                class="ri-github-line"></i></a>
+                        <a href="https://dribbble.com/" target="_blank" class="home_social-link"><i
+                                class="ri-dribbble-line"></i></a>
+                    </ul>
+                </div>
+                <!--==================== HOME INFO 1 ====================-->
+                <div class="home_info">
+                    <div>
+                        <h3 class="home_info-title">
+                            ABOUT
+                        </h3>
+                        <p class="home_info-description">
+                            Hi, I'm Tiên, Frontend Developer.
+                            Passionate about designing beautiful web
+                            interfaces. Based in Perú.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="home_info-title">
+                            CONTACT
+                        </h3>
+                        <p class="home_info-description">
+                            
+                            Email: tienltph19794@fpt.edu.vn <br>
+                            Điện thoại: 0329047527 <br>
+                            Địa chỉ: Cầu Giấy - Hà Nội <br>
+
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="home_info-title">
+                            SERVICES
+                        </h3>
+                        <p class="home_info-description">
+                            Website Design <br>
+                            UI/UX Design <br>
+                            Animation <br>
+                        </p>
+                    </div>
+                </div>
+                <!--==================== HOME INFO 2 ====================-->
+                <div class="home_info">
+                    <div>
+                        <h3 class="home_info-title">
+                            YEARS OF EXPERIENCE
+                        </h3>
+                        <p class="home_info-number">
+                            0+
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="home_info-title">
+                            COMPLETED PROJECTS
+                        </h3>
+                        <p class="home_info-number">
+                            02+
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="home_info-title">
+                            COMPANIES WORKED
+                        </h3>
+                        <p class="home_info-number">
+                            0+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
   `
   
-  // function opentab(tabname) {
-  //     for (let tabLinks of tabLink) {
-  //         tabLinks.classList.remove("active-link");
-  //     }
-  //     for (let tabContents of tabContent) {
-  //         tabContents.classList.remove("active-tab");
-  //     }
-  //     Event.currentTarget.classList.add("active-link");
-  //     document.getElementById(tabname).classList.add("active-tab");
-  //   }
+  
 }
 
 
